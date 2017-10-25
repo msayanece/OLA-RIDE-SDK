@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">OLA-RIDE-SDK</string>
+    <string name="base_url">http://sandbox-t.olacabs.com/</string>
+    <string name="x_app_token">f93d19f727524bb6b625df7403fb2879</string>
+    <string name="redirect_url">https://www.olacabs.com/</string>
+    <string
+        name="o_auth_url">
+        https://sandbox-t1.olacabs.com/oauth2/authorize?response_type=token&amp;client_id=ZTNlYzdkOTgtMTRiZS00NDdkLWJmNTItMzVjYjU2YWM4MTk5&amp;redirect_uri=https://www.olacabs.com/&amp;scope=profile%20booking&amp;state=state123
+    </string>
+</resources>

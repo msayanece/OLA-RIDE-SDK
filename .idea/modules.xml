@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/OLA-RIDE-SDK.iml" filepath="$PROJECT_DIR$/OLA-RIDE-SDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sayan-ola-ride-sdk/sayan-ola-ride-sdk.iml" filepath="$PROJECT_DIR$/sayan-ola-ride-sdk/sayan-ola-ride-sdk.iml" />
+    </modules>
+  </component>
+</project>
