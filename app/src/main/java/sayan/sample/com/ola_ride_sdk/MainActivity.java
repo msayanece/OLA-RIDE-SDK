@@ -33,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
                 .setEnvironment(SessionConfig.Environment.SANDBOX)
                 .setoAuthUrl(getResources().getString(R.string.o_auth_url))
                 .setxAppToken(getResources().getString(R.string.x_app_token))
-//                .setUserName("msayan64@gmail.com")
-//                .setPassword("Titirece@50")
                 .build();
         mAccessTokenManager = new AccessTokenManager();
         Authenticate.authenticateUser(this, mSessionConfig,mAccessTokenManager, new AuthenticateCallback() {

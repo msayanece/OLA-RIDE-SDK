@@ -2,6 +2,7 @@ package sayan.sample.com.sayan_ola_ride_sdk;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 
 import sayan.sample.com.sayan_ola_ride_sdk.activities.LoginActivity;
 import sayan.sample.com.sayan_ola_ride_sdk.interfaces.AuthenticateCallback;
@@ -13,9 +14,11 @@ import sayan.sample.com.sayan_ola_ride_sdk.interfaces.AuthenticateCallback;
 
 public class Authenticate {
 
-    public static void authenticateUser(final Activity context, final SessionConfig config, final AccessTokenManager accessTokenManager, final
-    AuthenticateCallback
-            callback){
+    public static void authenticateUser(final Activity context,
+                                        final SessionConfig config,
+                                        final AccessTokenManager accessTokenManager,
+                                        final AuthenticateCallback callback){
+        Log.d(Constants.TAG, "Authentication initiated.");
         new LoginActivity.Initializer().initializeVariables(config, accessTokenManager, callback);
         Intent intent = new Intent(context, LoginActivity.class);
         intent.putExtra("url", config.getoAuthUrl());

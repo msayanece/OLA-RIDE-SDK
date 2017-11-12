@@ -1,6 +1,8 @@
 package sayan.sample.com.sayan_ola_ride_sdk;
 
 
+import android.util.Log;
+
 /**
  * Created by Admin on 20-10-2017.
  */
@@ -112,6 +114,12 @@ public class SessionConfig {
         this.userName = userName;
         this.password = password;
         this.hasUserCredential = hasUserCredential;
+        Log.d(Constants.TAG, "xAppToken: " + xAppToken);
+        Log.d(Constants.TAG, "oAuthUrl: " + oAuthUrl);
+        Log.d(Constants.TAG, "environment: " + environment);
+        Log.d(Constants.TAG, "userName: " + userName);
+        Log.d(Constants.TAG, "password: " + password);
+        Log.d(Constants.TAG, "hasUserCredential: " + hasUserCredential);
     }
 
     public static final class Environment {
