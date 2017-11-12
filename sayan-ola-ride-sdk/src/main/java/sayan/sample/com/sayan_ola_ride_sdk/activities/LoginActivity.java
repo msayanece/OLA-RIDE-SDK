@@ -98,7 +98,10 @@ public class LoginActivity extends AppCompatActivity {
                         webView.setVisibility(View.VISIBLE);
                     }
                 }else {
-                    Log.d(Constants.TAG, "Unable to load login page, check url.");
+                    if (webView.getVisibility() == View.VISIBLE){
+                        progressBar.setVisibility(View.GONE);
+                    }
+                    Log.d(Constants.TAG, "Unable to load login page, check url: " + url);
                 }
             }
         });
