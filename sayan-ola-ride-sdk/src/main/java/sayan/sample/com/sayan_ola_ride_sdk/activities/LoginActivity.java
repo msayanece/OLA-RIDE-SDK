@@ -52,6 +52,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
+                progressBar.setVisibility(View.VISIBLE);
+                webView.setVisibility(View.GONE);
                 Log.d(Constants.TAG, "Page loading almost done.");
                 if (url.contains("permission")) {
                     Log.d(Constants.TAG, "Waiting for user permission.");
@@ -98,10 +100,9 @@ public class LoginActivity extends AppCompatActivity {
                         webView.setVisibility(View.VISIBLE);
                     }
                 }else {
-                    if (webView.getVisibility() == View.VISIBLE){
-                        progressBar.setVisibility(View.GONE);
-                    }
-                    Log.d(Constants.TAG, "Unable to load login page, check url: " + url);
+                    progressBar.setVisibility(View.GONE);
+                    webView.setVisibility(View.VISIBLE);
+                    Log.d(Constants.TAG, "url: " + url);
                 }
             }
         });
