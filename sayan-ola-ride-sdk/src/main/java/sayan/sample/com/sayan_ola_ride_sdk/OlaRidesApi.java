@@ -20,21 +20,27 @@ public class OlaRidesApi {
      */
     public static class Builder {
         SessionConfig session;
+
         Builder(SessionConfig session) {
             this.session = session;
         }
+
         /**
          * Create the {@link OlaRidesApi} to be used.
          *
          * @return {@link OlaRidesApi}
          */
         public OlaRidesApi build() {
-            Retrofit retrofit = new Retrofit.Builder()
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .baseUrl(session.getEnvironment())
-                    .build();
-
-            return new OlaRidesApi(retrofit);
+            if (InterceptorHTTPClientCreator.getOkHttpClient() == null) {
+                return null;
+            } else {
+                Retrofit retrofit = new Retrofit.Builder()
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .baseUrl(session.getEnvironment())
+                        .client(InterceptorHTTPClientCreator.getOkHttpClient())
+                        .build();
+                return new OlaRidesApi(retrofit);
+            }
         }
     }
 

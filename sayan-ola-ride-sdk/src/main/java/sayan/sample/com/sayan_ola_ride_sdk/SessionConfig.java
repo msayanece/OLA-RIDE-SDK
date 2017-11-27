@@ -1,6 +1,7 @@
 package sayan.sample.com.sayan_ola_ride_sdk;
 
 
+import android.content.Context;
 import android.util.Log;
 
 /**
@@ -93,8 +94,21 @@ public class SessionConfig {
             return this;
         }
 
+        @Deprecated
         public SessionConfig build() {
+            if (environment == null) {
+                environment = Environment.PRODUCTION;
+            }
+            if (userName == null || password == null){
+                hasUserCredential = false;
+            }else {
+                hasUserCredential = true;
+            }
+            return new SessionConfig(xAppToken, oAuthUrl,environment, userName, password, hasUserCredential);
+        }
 
+        public SessionConfig build(Context context) {
+            InterceptorHTTPClientCreator.createInterceptorHTTPClient(context);
             if (environment == null) {
                 environment = Environment.PRODUCTION;
             }
